@@ -29,7 +29,7 @@ drift, and a build gate (dead links, tokens, schema parse, title/meta lengths, i
 
 ## Before publishing (client data — nothing here is invented)
 0. **Name check:** the logo reads "Step **With** Trish", the About copy reads "Step **For** Trish" — confirm, then change one config value and rebuild.
-1. **Domain:** canonicals and schema point at `https://stepwithtrish.com/` — confirm the client owns it (it was registered as of 2026-09-08); `stepfortrish.com` and `stepwithtrishflooring.com` were available.
+1. **Domain:** canonicals and schema point at `https://stepwithtrish.com/` — confirm the client owns it (it was registered as of 2026-09-08); `stepfortrish.com` and `stepwithtrishflooring.com` were available. Until the real domain is attached, `vercel.json` sends `X-Robots-Tag: noindex` on any `*.vercel.app` host so the preview hostname is never indexed; the header does not apply to the custom domain.
 2. Real logo file into the header/footer lockup; phone, address, hours, email; Google Business Profile → then add `telephone`, `address`, `geo`, `openingHoursSpecification`, `sameAs` to the LocalBusiness node (one config change).
 3. Wire the consult form (it says on submit that it is not connected yet).
 4. Contractor licence: nothing on the site claims one. Once the studio or its installer of record holds NSCB C-16 / C-20, add the number to the footer and installation page.
