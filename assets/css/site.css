@@ -205,7 +205,7 @@ input:focus,textarea:focus{outline:0;border-color:var(--crimson);box-shadow:0 0 
 textarea{resize:vertical;min-height:112px}
 .chips{border:0;margin:0;padding:0;display:grid;gap:.6rem}
 .chips legend{padding:0;margin-bottom:.15rem}
-.chip-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.55rem}
+.chip-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.55rem}
 .chip{position:relative;display:block;cursor:pointer}
 .chip input{position:absolute;opacity:0;width:1px;height:1px}
 .chip span{display:flex;justify-content:center;align-items:center;padding:.7rem .4rem;border:1px solid rgba(31,19,21,.2);border-radius:4px;background:var(--offwhite);font:500 .86rem/1 var(--font-body);color:var(--ink);text-transform:none;letter-spacing:0;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
@@ -293,7 +293,7 @@ textarea{resize:vertical;min-height:112px}
   .feature-card{max-width:none}
   .consult{padding-top:calc(64px + clamp(64px,9vw,120px))}
   .field-row{grid-template-columns:1fr}
-  .chip-row{grid-template-columns:1fr 1fr}
+  .chip-row{grid-template-columns:repeat(3,minmax(0,1fr))}
   .footer-inner{grid-template-columns:1fr}
 }
 @media (max-width:420px){

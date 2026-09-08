@@ -12,7 +12,7 @@ every URL matches its canonical.
 |---|---|
 | `/` | Home |
 | `/flooring/` | Flooring & services hub |
-| `/hardwood-flooring/` · `/luxury-vinyl-plank/` · `/tile-and-stone/` · `/carpet-and-rugs/` | Material pages |
+| `/hardwood-flooring/` · `/luxury-vinyl-plank/` · `/carpet-and-rugs/` | Material pages (Tile & Stone removed on the owner's instruction, 2026-09-08; `/tile-and-stone/` redirects to `/flooring/`) |
 | `/interior-design/` · `/flooring-installation/` | Service pages |
 | `/service-area/` | Reno, Sparks & Northern Nevada (one page — no per-city doorway pages until real local proof exists) |
 | `/about/` | Our story (the client's copy, verbatim) |

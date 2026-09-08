@@ -1,6 +1,13 @@
 {
   "trailingSlash": true,
   "cleanUrls": false,
+  "redirects": [
+    {
+      "source": "/tile-and-stone/",
+      "destination": "/flooring/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
