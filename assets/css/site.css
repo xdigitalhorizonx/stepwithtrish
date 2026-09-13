@@ -90,21 +90,21 @@ body.home .site-header:not(.scrolled) .brand-logo{width:0;opacity:0;margin-right
 
 /* ---------- hero: edge-to-edge frame, plank-by-plank reveal, headline hanging over the edge ---------- */
 .hero{position:relative;background:var(--white)}
-.hero-frame{position:relative;height:clamp(640px,90svh,960px);background:var(--white);--hero-x:var(--gutter);--panel-w:min(34vw,470px)}
+.hero-frame{position:relative;height:clamp(620px,82svh,840px);background:var(--white);--hero-x:var(--gutter);--panel-w:min(34vw,470px)}
 @media (min-width:1352px){.hero-frame{--hero-x:calc(50% - 620px + var(--gutter))}}
 .hero-media{position:absolute;inset:0;overflow:hidden;z-index:0}
 .hero-shift{position:absolute;left:0;top:-10%;width:100%;height:120%;will-change:transform}
-.hero-shift img{width:100%;height:100%;object-fit:cover;object-position:58% 50%;transform-origin:64% 50%;animation:heroZoom 9s var(--ease) both}
+.hero-shift img{width:100%;height:100%;object-fit:cover;object-position:56% 42%;transform-origin:60% 45%;animation:heroZoom 9s var(--ease) both}
 @keyframes heroZoom{from{transform:scale(1.1)}to{transform:scale(1)}}
 .hero-planks{position:absolute;inset:0;z-index:3;display:flex;pointer-events:none;overflow:hidden}
 .hero-planks i{flex:1 1 0;background:var(--white);border-right:1px solid rgba(31,19,21,.07);transform-origin:top;animation:plank .95s var(--ease) forwards;animation-delay:calc(140ms + var(--i)*65ms)}
 @keyframes plank{to{transform:translateY(-101%)}}
 .hero-veil{position:absolute;inset:0;z-index:1;pointer-events:none;background:
-  linear-gradient(90deg,#fff 0%,#fff 29%,rgba(255,255,255,.93) 37%,rgba(255,255,255,.42) 47%,rgba(255,255,255,0) 57%),
-  radial-gradient(ellipse 60% 48% at 68% 100%,rgba(255,255,255,.9) 0%,rgba(255,255,255,.55) 42%,rgba(255,255,255,0) 76%),
-  linear-gradient(180deg,rgba(255,255,255,.55) 0%,rgba(255,255,255,0) 22%)}
+  linear-gradient(90deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.95) 14%,rgba(255,255,255,.86) 26%,rgba(255,255,255,.5) 36%,rgba(255,255,255,0) 46%),
+  radial-gradient(ellipse 54% 42% at 70% 100%,rgba(255,255,255,.78) 0%,rgba(255,255,255,.4) 45%,rgba(255,255,255,0) 76%),
+  linear-gradient(180deg,rgba(255,255,255,.42) 0%,rgba(255,255,255,0) 16%)}
 .hero-panel{position:absolute;z-index:4;left:var(--hero-x);top:0;bottom:0;width:var(--panel-w);display:flex;flex-direction:column;justify-content:flex-end;gap:clamp(12px,1.8vh,20px);padding:calc(104px + 2vh) 0 38px}
-.hero-crest{width:clamp(180px,19vw,272px);height:auto;margin-left:-1%;animation:fadeUp 1s var(--ease) both;animation-delay:.95s;pointer-events:none}
+.hero-crest{width:clamp(200px,21vw,300px);height:auto;margin-left:-2%;animation:fadeUp 1s var(--ease) both;animation-delay:.95s;pointer-events:none}
 .hero-h{position:absolute;z-index:4;left:calc(var(--hero-x) + var(--panel-w) + 24px);right:var(--gutter);bottom:calc(var(--h1)*-.46);font-size:var(--h1);line-height:.92;letter-spacing:-.03em;color:var(--ink);text-shadow:0 1px 0 rgba(255,255,255,.6),0 10px 40px rgba(255,255,255,.55)}
 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.06em .04em .14em 0;margin:-.06em 0 -.14em 0}
 .w>span{display:inline-block;transform:translateY(112%);animation:rise 1.15s var(--ease) forwards;animation-delay:calc(.55s + var(--i,0)*.1s)}
@@ -264,7 +264,7 @@ textarea{resize:vertical;min-height:112px}
 }
 @media (max-width:900px){
   .hero-frame{height:auto;display:flex;flex-direction:column;--hero-x:var(--gutter)}
-  .hero-panel{order:-1;position:static;width:auto;padding:calc(96px + 2vh) var(--gutter) 26px;gap:16px;justify-content:flex-start}
+  .hero-panel{order:-1;position:static;width:auto;padding:calc(110px + 2vh) var(--gutter) 26px;gap:16px;justify-content:flex-start}
   .hero-crest{width:clamp(140px,34vw,170px);margin-left:0}
   .hero-kicker{max-width:42ch}
   .hero-media{position:relative;inset:auto;height:clamp(420px,58svh,600px)}
@@ -323,6 +323,10 @@ textarea{resize:vertical;min-height:112px}
   .chip span{padding:.95rem .4rem}
   .panel-content .link-arrow{min-height:44px}
   .materials-fig:hover::before,.stair:hover{transform:none}
+}
+@media (max-height:800px) and (min-width:901px){
+  .hero-crest{width:clamp(170px,16vw,230px)}
+  .hero-panel{padding-top:calc(104px + 1vh)}
 }
 @media (max-height:560px) and (min-width:901px){
   .hero-frame{height:660px}
