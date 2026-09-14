@@ -236,6 +236,8 @@ textarea{resize:vertical;min-height:112px}
 .footer-nav a{font:500 .95rem/1 var(--font-body);color:var(--white);padding:.25rem 0;position:relative}
 .footer-nav a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--rose);transform:scaleX(0);transform-origin:left;transition:transform .4s var(--ease)}
 .footer-nav a:hover::after{transform:scaleX(1)}
+.footer-meta a{color:var(--rose);text-decoration:underline;text-decoration-color:rgba(242,180,193,.45);text-underline-offset:3px;transition:color .3s,text-decoration-color .3s}
+.footer-meta a:hover{color:var(--white);text-decoration-color:var(--white)}
 .footer-meta{grid-column:1/-1;margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.16);font-size:.82rem;color:var(--rose-soft);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 
 /* ---------- reveal on scroll (JS-gated so no-JS shows everything) ---------- */
