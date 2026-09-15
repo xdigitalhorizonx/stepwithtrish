@@ -19,7 +19,7 @@
   --ease:cubic-bezier(.2,.7,.2,1);
   --h1:clamp(3.2rem,9.2vw,9.4rem);
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --woodgrain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='220' viewBox='0 0 420 220' fill='none' stroke='%235E0B13' stroke-opacity='.15' stroke-width='1'%3E%3Cpath d='M0 40C105 40 105 70 210 70S315 40 420 40'/%3E%3Cpath d='M0 100C105 100 105 74 210 74S315 100 420 100'/%3E%3Cpath d='M0 150C90 150 130 178 210 178S330 150 420 150'/%3E%3Cpath d='M0 205C120 205 120 190 210 190S300 205 420 205'/%3E%3C/svg%3E");
+  --woodgrain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='220' viewBox='0 0 420 220' fill='none' stroke='%235E0B13' stroke-opacity='.09' stroke-width='1'%3E%3Cpath d='M0 40C105 40 105 70 210 70S315 40 420 40'/%3E%3Cpath d='M0 100C105 100 105 74 210 74S315 100 420 100'/%3E%3Cpath d='M0 150C90 150 130 178 210 178S330 150 420 150'/%3E%3Cpath d='M0 205C120 205 120 190 210 190S300 205 420 205'/%3E%3C/svg%3E");
 }
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -127,7 +127,7 @@ body.home .site-header:not(.scrolled) .brand-logo{width:0;opacity:0;margin-right
 .about{background:
   radial-gradient(60% 70% at 88% 10%,rgba(156,18,32,.55),rgba(156,18,32,0) 70%),
   radial-gradient(40% 50% at 6% 100%,rgba(66,5,9,.7),rgba(66,5,9,0) 70%),
-  repeating-linear-gradient(112deg,rgba(255,255,255,.075) 0 1px,transparent 1px 96px),
+  repeating-linear-gradient(112deg,rgba(255,255,255,.045) 0 1px,transparent 1px 96px),
   var(--burgundy);color:var(--white)}
 .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(40px,7vw,120px);align-items:start}
 .about h2{color:var(--white);font-size:clamp(2rem,3.6vw,3.1rem);max-width:14ch}
@@ -167,7 +167,7 @@ body.home .site-header:not(.scrolled) .brand-logo{width:0;opacity:0;margin-right
 /* ---------- the step — an ascending staircase (white) ---------- */
 .step{background:
   radial-gradient(56% 60% at 84% 12%,rgba(246,233,235,.9),rgba(246,233,235,0) 70%),
-  repeating-linear-gradient(112deg,rgba(156,18,32,.105) 0 1px,transparent 1px 96px),
+  repeating-linear-gradient(112deg,rgba(156,18,32,.06) 0 1px,transparent 1px 96px),
   var(--white)}
 .section-head{max-width:760px;margin-bottom:clamp(36px,5vw,64px)}
 .section-head .lede{margin-top:1.1rem}
@@ -194,7 +194,7 @@ body.home .site-header:not(.scrolled) .brand-logo{width:0;opacity:0;margin-right
 /* ---------- consult ---------- */
 .consult{padding-top:calc(88px + clamp(72px,9vw,120px));background:
   radial-gradient(48% 50% at 6% 100%,rgba(156,18,32,.12),rgba(156,18,32,0) 70%),
-  repeating-linear-gradient(0deg,rgba(156,18,32,.09) 0 1px,transparent 1px 88px),
+  repeating-linear-gradient(0deg,rgba(156,18,32,.05) 0 1px,transparent 1px 88px),
   var(--blush)}
 .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6.5vw,104px);align-items:start}
 .next-list{list-style:none;margin:1.8rem 0 0;padding:0;display:grid;gap:.85rem}
@@ -225,7 +225,7 @@ textarea{resize:vertical;min-height:112px}
 /* ---------- footer (wine) ---------- */
 .site-footer{background:
   radial-gradient(50% 60% at 90% 0%,rgba(156,18,32,.45),rgba(156,18,32,0) 70%),
-  repeating-linear-gradient(112deg,rgba(255,255,255,.07) 0 1px,transparent 1px 96px),
+  repeating-linear-gradient(112deg,rgba(255,255,255,.04) 0 1px,transparent 1px 96px),
   var(--wine);color:var(--white);padding:clamp(48px,6vw,80px) 0 2rem}
 .footer-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:2.5rem;align-items:start}
 .footer-brand .brand-name{font-size:1.6rem;color:var(--white)}
@@ -406,17 +406,17 @@ textarea{resize:vertical;min-height:112px}
 .band{padding:clamp(64px,9vw,120px) 0;position:relative}
 .band--white{background:
   radial-gradient(56% 60% at 84% 12%,rgba(246,233,235,.9),rgba(246,233,235,0) 70%),
-  repeating-linear-gradient(112deg,rgba(156,18,32,.105) 0 1px,transparent 1px 96px),
+  repeating-linear-gradient(112deg,rgba(156,18,32,.06) 0 1px,transparent 1px 96px),
   var(--white)}
 .band--offwhite{background:var(--woodgrain),linear-gradient(180deg,var(--offwhite),var(--blush));background-size:420px 220px,auto;border-top:1px solid rgba(156,18,32,.12);border-bottom:1px solid rgba(156,18,32,.12)}
 .band--blush{background:
   radial-gradient(48% 50% at 6% 100%,rgba(156,18,32,.12),rgba(156,18,32,0) 70%),
-  repeating-linear-gradient(0deg,rgba(156,18,32,.09) 0 1px,transparent 1px 88px),
+  repeating-linear-gradient(0deg,rgba(156,18,32,.05) 0 1px,transparent 1px 88px),
   var(--blush)}
 .band--burgundy{background:
   radial-gradient(60% 70% at 88% 10%,rgba(156,18,32,.55),rgba(156,18,32,0) 70%),
   radial-gradient(40% 50% at 6% 100%,rgba(66,5,9,.7),rgba(66,5,9,0) 70%),
-  repeating-linear-gradient(112deg,rgba(255,255,255,.075) 0 1px,transparent 1px 96px),
+  repeating-linear-gradient(112deg,rgba(255,255,255,.045) 0 1px,transparent 1px 96px),
   var(--burgundy);color:var(--white)}
 .band--burgundy h2,.band--burgundy h3{color:var(--white)}
 .band--burgundy .prose,.band--burgundy p{color:var(--white)}
