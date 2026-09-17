@@ -133,7 +133,7 @@
         else { note.classList.add('is-error'); note.textContent=msg||'We could not send that just now. Please email stepwithtrish@gmail.com and we will pick it up there.'; }
         if(btn){ btn.disabled=false; btn.removeAttribute('aria-busy'); }
       };
-      fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      fetch('/api/lead/',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
         .then(function(r){ return r.json().then(function(j){ done(r.ok&&j.ok, j.error); }, function(){ done(false); }); })
         .catch(function(){ done(false); });
     });
