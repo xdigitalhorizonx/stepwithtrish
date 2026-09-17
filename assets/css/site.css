@@ -221,6 +221,8 @@ textarea{resize:vertical;min-height:112px}
 .form-note{font-size:.9rem;color:var(--ink-soft);min-height:1.2em}
 .form-note.is-error{color:var(--crimson)}
 .form-note.is-info{color:var(--ink-soft)}
+.form-note.is-success{color:#1F6B3A;font-weight:600}
+.hp-field{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden}
 
 /* ---------- footer (wine) ---------- */
 .site-footer{background:

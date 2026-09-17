@@ -228,6 +228,7 @@
           </div>
         </fieldset>
         <div class="field"><label for="f-space">Tell us about the space</label><textarea id="f-space" name="space" rows="4" placeholder="Rooms, rough square footage, what's there now, when you'd like it done."></textarea></div>
+        <div class="hp-field" aria-hidden="true"><label for="f-company">Company</label><input id="f-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
         <button class="btn btn-primary btn-block" type="submit">Book a design consult <svg class="lucide" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
         <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
       </form>
@@ -305,15 +306,29 @@
     window.addEventListener('scroll', onScroll, {passive:true}); window.addEventListener('resize', onScroll); frame();
   }
 
-  /* consult form — honest: not wired to an inbox yet */
+  /* consult form → /api/lead */
   var form=d.getElementById('consult-form'), note=d.getElementById('form-note');
   if(form && note){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      var name=form.name.value.trim(), email=form.email.value.trim();
+      var btn=form.querySelector('button[type="submit"]');
+      var val=function(n){ var el=form.elements[n]; return el&&el.value?el.value.trim():''; };
+      var name=val('name'), email=val('email');
       note.className='form-note';
-      if(!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ note.classList.add('is-error'); note.textContent='Add your name and a working email so we can reach you.'; (name?form.email:form.name).focus(); return; }
-      note.classList.add('is-info'); note.textContent='This preview isn’t connected to an inbox yet. Once the site is live, this goes straight to the team.';
+      if(!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){ note.classList.add('is-error'); note.textContent='Add your name and a working email so we can reach you.'; (name?form.elements.email:form.elements.name).focus(); return; }
+      var picked=form.querySelector('input[name="material"]:checked');
+      var payload={name:name,email:email,phone:val('phone'),material:picked?picked.value:'',space:val('space'),company:val('company'),page:location.pathname};
+      if(btn){ btn.disabled=true; btn.setAttribute('aria-busy','true'); }
+      note.classList.add('is-info'); note.textContent='Sending\u2026';
+      var done=function(ok,msg){
+        note.className='form-note';
+        if(ok){ note.classList.add('is-success'); note.textContent='Thank you \u2014 that reached the studio. Trish will be in touch shortly.'; form.reset(); }
+        else { note.classList.add('is-error'); note.textContent=msg||'We could not send that just now. Please email stepwithtrish@gmail.com and we will pick it up there.'; }
+        if(btn){ btn.disabled=false; btn.removeAttribute('aria-busy'); }
+      };
+      fetch('/api/lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+        .then(function(r){ return r.json().then(function(j){ done(r.ok&&j.ok, j.error); }, function(){ done(false); }); })
+        .catch(function(){ done(false); });
     });
   }
 
